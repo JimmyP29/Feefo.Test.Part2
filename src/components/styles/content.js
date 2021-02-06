@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const blue = '#0796FF';
 const grey = '#5A6369';
 const dark = '#282c34';
-const green = '#18AC15';
+const green = '#08AA37';
 
 /* MAIN */
 export const MainWrapper = styled.section`
@@ -17,33 +17,33 @@ export const Title = styled.h1`
     color: ${dark};
 `;
 
-export const GreyText = styled.span`
-    color: ${grey};
-`;
-
 export const Text = styled.span`
     color: ${dark};
-    font-size: 20px;
+    font-size: 1.2rem;
+`;
+
+export const GreyText = styled(Text)`
+    color: ${grey};
 `;
 
 export const BoldText = styled(Text)`
     font-weight: bold;
 `;
 
-export const PercentageText = styled.span`
+export const PercentageText = styled(BoldText)`
     color: ${green};
-    font-size: 10;
+    font-size: 2.5rem;
 `;
 
 /* ICONS */
 export const BlueIcon = styled.span`
     color: ${blue};
-    font-size: 30px;
+    font-size: 1.8rem;
 `;
 
 export const GreyIcon = styled.span`
     color: ${grey};
-    font-size: 30px;
+    font-size: 1.8rem;
 `;
 
 /* TILES */
