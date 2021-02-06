@@ -3,11 +3,20 @@ import { number } from 'prop-types';
 
 const LinesDetails = ({ linePercentage }) => {
     console.log(linePercentage);
-    return (<>Lines details</>);
+    return (
+        <>
+            {`${linePercentage}%`}
+            <span>LINES SAVED</span>
+        </>
+    );
 };
 
 LinesDetails.propTypes = {
-    uploadPercentage: number.isRequired,
+    linePercentage: number,
+};
+
+LinesDetails.defaultProps = {
+    linePercentage: 0,
 };
 
 export default LinesDetails;

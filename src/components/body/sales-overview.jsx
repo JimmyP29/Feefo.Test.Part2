@@ -4,13 +4,21 @@ import SalesDetails from './sales-details';
 import UploadDetails from './upload-details';
 import LinesDetails from './lines-details';
 
+const calculateLinePercentage = (linesAttempted, linesSaved) => (linesAttempted / linesSaved);
+
 const SalesOverview = ({ salesOverview }) => {
-  console.log(salesOverview);
+
+  const { successfulUploads, linesSaved, linesAttempted } = salesOverview;
   return (
     <>
-      <SalesDetails />
+      <SalesDetails
+        numberOfUploads={successfulUploads}
+        numberOfLines={linesSaved}
+      />
       <UploadDetails />
-      <LinesDetails />
+      <LinesDetails
+        linePercentage={calculateLinePercentage(linesAttempted, linesSaved)}
+      />
     </>
   );
 };
