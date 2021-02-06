@@ -7,19 +7,11 @@ import { string, number, shape } from 'prop-types';
 import ContactDetails from './header/contact-details';
 import SalesOverview from './body/sales-overview';
 
-// import MainWrapper from './styles/account-overview';
+import { MainWrapper } from './styles/account-overview';
+import { Title } from './styles/text';
 // import AccountHeader from './styles/account-header';
 import { Grid, Row, Col } from './styles/grid';
 
-const MainWrapper = styled.section`
-    background-color: lightblue;
-    /* display: flex; */
-    /* flex-direction: column; */
-   
-    /* justify-content: center; */
-    font-family: 'Roboto', sans-serif;
-    /* text-align: center; */
-`;
 
 // const AccountHeader = styled.div`
 //     color: #282c34;
@@ -30,11 +22,6 @@ const MainWrapper = styled.section`
 //     justify-content: flex-start;
 //     //font-size: calc(10px + 2vmin);
 // `;
-
-const Title = styled.h1`
-  color: #282c34;
-`;
-
 
 export const AccountOverview = ({ data }) => {
   console.log(data);

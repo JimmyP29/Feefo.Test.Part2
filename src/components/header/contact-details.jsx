@@ -4,19 +4,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Grid, Row, Col } from '../styles/grid';
+import { Text, BoldText, SubText } from '../styles/text';
 
-const Text = styled.span`
-  color: #B5B3B3;
-`;
-
-const Subtext = styled.span`
-  color: #282c34;
-`;
-
-const Boldtext = styled(Text)`
-font-weight: bold;
-color: black;
-`;
 
 const Details = styled.div`
 display: flex;
@@ -34,21 +23,23 @@ const ContactDetails = ({ name, email }) => {
       <Row><Text>YOUR FEEFO SUPPORT CONTACT</Text></Row>
       <Row>
         <Col size={1}>
-          <Square>S</Square>
+          <Square>
+            <BoldText>S</BoldText>
+          </Square>
         </Col>
         <Col size={5}>
           <Row>
-            <Boldtext>
+            <BoldText>
               {name}
-            </Boldtext>
+            </BoldText>
           </Row>
           <Row>
             <FontAwesomeIcon icon={faEnvelope} />
-            <Subtext>{email}</Subtext>
+            <SubText>{email}</SubText>
           </Row>
         </Col>
         <Col size={5}>
-          <Subtext>020 3362 4208</Subtext>
+          <SubText>020 3362 4208</SubText>
         </Col>
       </Row>
     </Grid>

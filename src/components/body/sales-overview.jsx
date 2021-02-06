@@ -4,30 +4,22 @@ import SalesDetails from './sales-details';
 import UploadDetails from './upload-details';
 import LinesDetails from './lines-details';
 import { Grid, Row, Col } from '../styles/grid';
-import styled from 'styled-components';
-
-const Tile = styled.div`
-  background-color: white;
-  border-bottom: lightblue solid 2px;
-  border-left: lightblue solid 2px;
-  border-right: lightblue solid 2px;
-  padding: 2%;
-`;
+import { TileWrapper, Tile } from '../styles/tile';
 
 const calculatePercentage = (totalValue, partialValue) => (
   parseInt(((totalValue / partialValue) % 100).toFixed(1, 10))
 );
 
 const SalesOverview = ({ salesOverview }) => {
-
   const {
     uploads,
     successfulUploads,
     linesSaved,
     linesAttempted,
   } = salesOverview;
+
   return (
-    <>
+    <TileWrapper>
       <Grid>
         <Row>
           <Col size={1}>
@@ -56,7 +48,7 @@ const SalesOverview = ({ salesOverview }) => {
           </Col>
         </Row>
       </Grid>
-    </>
+    </TileWrapper>
   );
 };
 
