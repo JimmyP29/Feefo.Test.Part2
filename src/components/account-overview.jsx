@@ -1,15 +1,9 @@
 import React from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faHardHat } from '@fortawesome/free-solid-svg-icons';
-import styled from 'styled-components';
 import { string, number, shape } from 'prop-types';
 
 import ContactDetails from './header/contact-details';
 import SalesOverview from './body/sales-overview';
-
-import { MainWrapper } from './styles/account-overview';
-import { Title } from './styles/text';
-// import AccountHeader from './styles/account-header';
+import { MainWrapper, Title } from './styles/content';
 import { Grid, Row, Col } from './styles/grid';
 
 

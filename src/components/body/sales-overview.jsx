@@ -4,7 +4,7 @@ import SalesDetails from './sales-details';
 import UploadDetails from './upload-details';
 import LinesDetails from './lines-details';
 import { Grid, Row, Col } from '../styles/grid';
-import { TileWrapper, Tile } from '../styles/tile';
+import { TileWrapper, Tile } from '../styles/content';
 
 const calculatePercentage = (totalValue, partialValue) => (
   parseInt(((totalValue / partialValue) % 100).toFixed(1, 10))

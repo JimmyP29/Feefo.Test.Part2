@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Grid, Row, Col } from '../styles/grid';
-import { Text, BoldText, SubText } from '../styles/text';
+import { GreyText, BoldText, Text } from '../styles/content';
 
 
 const Details = styled.div`
@@ -20,7 +20,11 @@ background-color: yellow;
 const ContactDetails = ({ name, email }) => {
   return (
     <Grid>
-      <Row><Text>YOUR FEEFO SUPPORT CONTACT</Text></Row>
+      <Row>
+        <BoldText>
+          <GreyText>YOUR FEEFO SUPPORT CONTACT</GreyText>
+        </BoldText>
+      </Row>
       <Row>
         <Col size={1}>
           <Square>
@@ -29,17 +33,15 @@ const ContactDetails = ({ name, email }) => {
         </Col>
         <Col size={5}>
           <Row>
-            <BoldText>
-              {name}
-            </BoldText>
+            <BoldText>{name}</BoldText>
           </Row>
           <Row>
             <FontAwesomeIcon icon={faEnvelope} />
-            <SubText>{email}</SubText>
+            <Text>{email}</Text>
           </Row>
         </Col>
         <Col size={5}>
-          <SubText>020 3362 4208</SubText>
+          <Text>020 3362 4208</Text>
         </Col>
       </Row>
     </Grid>
