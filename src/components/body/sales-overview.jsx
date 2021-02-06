@@ -4,20 +4,29 @@ import SalesDetails from './sales-details';
 import UploadDetails from './upload-details';
 import LinesDetails from './lines-details';
 
-const calculateLinePercentage = (linesAttempted, linesSaved) => (linesAttempted / linesSaved);
+const calculatePercentage = (totalValue, partialValue) => (
+  parseInt(((totalValue / partialValue) % 100).toFixed(1, 10))
+);
 
 const SalesOverview = ({ salesOverview }) => {
 
-  const { successfulUploads, linesSaved, linesAttempted } = salesOverview;
+  const {
+    uploads,
+    successfulUploads,
+    linesSaved,
+    linesAttempted,
+  } = salesOverview;
   return (
     <>
       <SalesDetails
         numberOfUploads={successfulUploads}
         numberOfLines={linesSaved}
       />
-      <UploadDetails />
+      <UploadDetails
+        uploadPercentage={calculatePercentage(uploads, successfulUploads)}
+      />
       <LinesDetails
-        linePercentage={calculateLinePercentage(linesAttempted, linesSaved)}
+        linePercentage={calculatePercentage(linesAttempted, linesSaved)}
       />
     </>
   );
