@@ -44,6 +44,8 @@ export const BlueIcon = styled.span`
 export const GreyIcon = styled.span`
     color: ${grey};
     font-size: 1.8rem;
+    display: flex;
+    justify-content: flex-end;
 `;
 
 /* TILES */
