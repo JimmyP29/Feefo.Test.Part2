@@ -8,7 +8,7 @@ import { Text, BoldText, BlueIcon, GreyIcon } from '../styles/content';
 const SalesDetails = ({ numberOfUploads, numberOfLines }) => (
   <Grid>
     <Row>
-      <Col size={1}>
+      <Col>
         <BlueIcon>
           <FontAwesomeIcon icon={faUpload} />
         </BlueIcon>

@@ -6,23 +6,12 @@ import SalesOverview from './body/sales-overview';
 import { MainWrapper, Title } from './styles/content';
 import { Grid, Row, Col } from './styles/grid';
 
-
-// const AccountHeader = styled.div`
-//     color: #282c34;
-//    // min-height: 100vh;
-//     display: flex;
-//     flex-direction: column;
-//     //align-items: center;
-//     justify-content: flex-start;
-//     //font-size: calc(10px + 2vmin);
-// `;
-
 export const AccountOverview = ({ data }) => {
-  console.log(data);
   const {
     supportContact: { name, email },
     salesOverview,
   } = data;
+
   return (
     <>
       <MainWrapper>

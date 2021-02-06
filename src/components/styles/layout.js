@@ -1,6 +1,9 @@
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
-// export blah = styled.span`
-//     display: flex;
-//     justify-content
-// `;
+export const PaddingLeft = styled.div`
+    padding-left: 5%;
+`;
+
+export const PaddingBottom = styled.div`
+    padding-bottom: 3%;
+`;
