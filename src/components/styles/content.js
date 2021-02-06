@@ -4,6 +4,7 @@ const blue = '#0796FF';
 const grey = '#5A6369';
 const dark = '#282c34';
 const green = '#08AA37';
+const yellow = '#EEC80C'
 
 /* MAIN */
 export const MainWrapper = styled.section`
@@ -39,6 +40,8 @@ export const PercentageText = styled(BoldText)`
 export const BlueIcon = styled.span`
     color: ${blue};
     font-size: 1.8rem;
+    display: flex;
+    justify-content: flex-start;
 `;
 
 export const GreyIcon = styled.span`
@@ -46,6 +49,26 @@ export const GreyIcon = styled.span`
     font-size: 1.8rem;
     display: flex;
     justify-content: flex-end;
+`;
+
+export const Square = styled.div`
+    height: 1.5rem;
+    width: 1.5rem;
+    position: relative;
+    resize: vertical;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    background-color: ${yellow};
+`;
+
+export const SquareInterior = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 1.2rem;
+    right: 1.2rem;
+    padding: .75rem;
+    transform: translateY(-50%);
+    resize: vertical;
 `;
 
 /* TILES */
