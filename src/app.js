@@ -1,4 +1,3 @@
-import './app.css';
 import AccountOverview from './components/account-overview';
 
 function App() {
@@ -18,8 +17,8 @@ function App() {
 
 
   return (
-    <div className="App">
-      <AccountOverview data={accountOverviewStub}/>
+    <div>
+      <AccountOverview data={accountOverviewStub} />
     </div>
   );
 }
