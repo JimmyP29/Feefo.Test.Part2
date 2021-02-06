@@ -9,15 +9,19 @@ const SalesDetails = ({ numberOfUploads, numberOfLines }) => (
   <Grid>
     <Row>
       <Col>
-        <BlueIcon>
-          <FontAwesomeIcon icon={faUpload} />
-        </BlueIcon>
+        <span aria-hidden="true">
+          <BlueIcon>
+            <FontAwesomeIcon icon={faUpload} />
+          </BlueIcon>
+        </span>
         <BoldText>Sales</BoldText>
       </Col>
       <Col size={1}>
-        <GreyIcon>
-          <FontAwesomeIcon icon={faInfoCircle} />
-        </GreyIcon>
+        <span aria-hidden="true">
+          <GreyIcon>
+            <FontAwesomeIcon icon={faInfoCircle} />
+          </GreyIcon>
+        </span>
       </Col>
     </Row>
     <Row>

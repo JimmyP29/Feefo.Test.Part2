@@ -30,7 +30,9 @@ const ContactDetails = ({ name, email }) => {
             </Row>
             <Row>
               <PaddingLeft>
-                <FontAwesomeIcon icon={faEnvelope} />
+                <span aria-hidden="true">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                </span>
                 <Text>{email}</Text>
               </PaddingLeft>
             </Row>
