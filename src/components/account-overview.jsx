@@ -50,7 +50,7 @@ export const AccountOverview = ({ data }) => {
             <Col size={1}>
               <Title>Account Overview</Title>
             </Col>
-            <Col size={2}>
+            <Col size={1}>
               <ContactDetails
                 name={name}
                 email={email}
