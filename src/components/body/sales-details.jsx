@@ -1,4 +1,6 @@
 import React from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import { number } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
@@ -8,7 +10,7 @@ import { Text, BoldText, BlueIcon, GreyIcon } from '../styles/content';
 const SalesDetails = ({ numberOfUploads, numberOfLines }) => (
   <Grid>
     <Row>
-      <Col>
+      <Col size={1}>
         <span aria-hidden="true">
           <BlueIcon>
             <FontAwesomeIcon icon={faUpload} />
@@ -16,11 +18,13 @@ const SalesDetails = ({ numberOfUploads, numberOfLines }) => (
         </span>
         <BoldText>Sales</BoldText>
       </Col>
-      <Col size={1}>
+      <Col>
         <span aria-hidden="true">
-          <GreyIcon>
-            <FontAwesomeIcon icon={faInfoCircle} />
-          </GreyIcon>
+          <Tippy content={'Hello, here is some information...'}>
+            <GreyIcon>
+              <FontAwesomeIcon icon={faInfoCircle} />
+            </GreyIcon>
+          </Tippy>
         </span>
       </Col>
     </Row>
