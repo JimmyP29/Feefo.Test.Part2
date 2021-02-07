@@ -4,7 +4,7 @@ import { Grid, Row } from '../styles/grid';
 import { PercentageText, GreyText, RedText } from '../styles/content';
 import { PaddingTop } from '../styles/layout';
 
-const UploadDetails = ({ uploadPercentage: renderValue }) => (
+const UploadDetails = ({ renderValue }) => (
   <Grid>
     {
       isNaN(parseInt(renderValue)) ?
@@ -33,11 +33,11 @@ const UploadDetails = ({ uploadPercentage: renderValue }) => (
 );
 
 UploadDetails.propTypes = {
-  uploadPercentage: string,
+  renderValue: string,
 };
 
 UploadDetails.defaultProps = {
-  uploadPercentage: '',
+  renderValue: '',
 };
 
 export default UploadDetails;

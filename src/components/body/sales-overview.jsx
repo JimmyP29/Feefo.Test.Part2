@@ -60,14 +60,14 @@ const SalesOverview = ({ salesOverview }) => {
           <Col size={1}>
             <TileBottomLeft>
               <UploadDetails
-                uploadPercentage={calculatePercentage(uploads, successfulUploads)}
+                renderValue={calculatePercentage(uploads, successfulUploads)}
               />
             </TileBottomLeft>
           </Col>
           <Col size={1}>
             <TileBottomRight>
               <LinesDetails
-                linePercentage={calculatePercentage(linesAttempted, linesSaved)}
+                renderValue={calculatePercentage(linesAttempted, linesSaved)}
               />
             </TileBottomRight>
           </Col>

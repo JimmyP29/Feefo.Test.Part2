@@ -4,7 +4,7 @@ import { Grid, Row } from '../styles/grid';
 import { PercentageText, GreyText, RedText } from '../styles/content';
 import { PaddingTop } from '../styles/layout';
 
-const LinesDetails = ({ linePercentage: renderValue }) => (
+const LinesDetails = ({ renderValue }) => (
   <Grid>
     {
       isNaN(parseInt(renderValue)) ?
@@ -33,11 +33,11 @@ const LinesDetails = ({ linePercentage: renderValue }) => (
 );
 
 LinesDetails.propTypes = {
-  linePercentage: string,
+  renderValue: string,
 };
 
 LinesDetails.defaultProps = {
-  linePercentage: '',
+  renderValue: '',
 };
 
 export default LinesDetails;
