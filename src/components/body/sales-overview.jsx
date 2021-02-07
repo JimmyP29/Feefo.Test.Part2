@@ -4,7 +4,7 @@ import SalesDetails from './sales-details';
 import UploadDetails from './upload-details';
 import LinesDetails from './lines-details';
 import { Grid, Row, Col } from '../styles/grid';
-import { TileWrapper, Tile } from '../styles/content';
+import { TileWrapper, TileTop, TileBottomLeft, TileBottomRight } from '../styles/content';
 
 const calculatePercentage = (totalValue, partialValue) => (
   parseInt(((totalValue / partialValue) % 100).toFixed(1, 10))
@@ -23,28 +23,28 @@ const SalesOverview = ({ salesOverview }) => {
       <Grid>
         <Row>
           <Col size={1}>
-            <Tile>
+            <TileTop>
               <SalesDetails
                 numberOfUploads={successfulUploads}
                 numberOfLines={linesSaved}
               />
-            </Tile>
+            </TileTop>
           </Col>
         </Row>
         <Row>
           <Col size={1}>
-            <Tile>
+            <TileBottomLeft>
               <UploadDetails
                 uploadPercentage={calculatePercentage(uploads, successfulUploads)}
               />
-            </Tile>
+            </TileBottomLeft>
           </Col>
           <Col size={1}>
-            <Tile>
+            <TileBottomRight>
               <LinesDetails
                 linePercentage={calculatePercentage(linesAttempted, linesSaved)}
               />
-            </Tile>
+            </TileBottomRight>
           </Col>
         </Row>
       </Grid>
