@@ -13,13 +13,16 @@ const validateValues = (totalValue, partialValue) => {
   if (falsey(totalValue) || falsey(partialValue))
     return 'Please supply valid numbers for calculation.'
 
+  if (isNaN(totalValue) || isNaN(partialValue))
+    return 'Please supply numerical values only.';
+
   if (partialValue > totalValue)
     return `Partial value (${partialValue}) cannot be greater than total value (${totalValue}).`
 
   return;
 };
 
-const calculatePercentage = (totalValue, partialValue) => {
+export const calculatePercentage = (totalValue, partialValue) => {
   const validationMessage = validateValues(totalValue, partialValue);
 
   if (validationMessage)
