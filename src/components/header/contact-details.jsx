@@ -47,8 +47,13 @@ const ContactDetails = ({ name, email }) => {
 };
 
 ContactDetails.propTypes = {
-  name: string.isRequired,
-  email: string.isRequired,
+  name: string,
+  email: string,
 };
+
+ContactDetails.defaultProps = {
+  name: '',
+  email: '',
+}
 
 export default ContactDetails;
