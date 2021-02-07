@@ -25,13 +25,13 @@ const calculatePercentage = (totalValue, partialValue) => {
   if (validationMessage)
     return validationMessage;
   else if (totalValue === 0 || partialValue === 0) {
-    return 0;
+    return '0';
   } else {
     const division = (((partialValue % totalValue) / totalValue) * 100);
     if (division % 100 === 0)
-      return ((totalValue / partialValue) * 100).toFixed(0, 10)
+      return ((totalValue / partialValue) * 100).toFixed(0, 10).toString()
     else
-      return division.toFixed(0, 10);
+      return division.toFixed(0, 10).toString();
   }
 };
 
@@ -86,5 +86,16 @@ SalesOverview.propTypes = {
     lastUploadDate: number,
   }).isRequired,
 };
+
+SalesOverview.defaultProps = {
+  salesOverview: {
+    uploads: 0,
+    successfulUploads: 0,
+    linesAttempted: 0,
+    linesSaved: 0,
+    lastUploadDate: 0,
+  },
+};
+
 
 export default SalesOverview;

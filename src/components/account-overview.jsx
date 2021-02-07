@@ -44,14 +44,30 @@ AccountOverview.propTypes = {
   supportContact: shape({
     name: string,
     email: string,
-  }).isRequired,
+  }),
   salesOverview: shape({
     uploads: number,
     successfulUploads: number,
     linesAttempted: number,
     linesSaved: number,
     lastUploadDate: number,
-  }).isRequired,
+  }),
+};
+
+AccountOverview.defaultProps = {
+  data: {
+    supportContact: {
+      name: '',
+      email: '',
+    },
+    salesOverview: {
+      uploads: 0,
+      successfulUploads: 0,
+      linesAttempted: 0,
+      linesSaved: 0,
+      lastUploadDate: 0,
+    },
+  }
 };
 
 export default AccountOverview;
