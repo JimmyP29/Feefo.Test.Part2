@@ -5,6 +5,8 @@ const grey = '#5A6369';
 const dark = '#282c34';
 const green = '#08AA37';
 const yellow = '#EEC80C';
+const iconSize = '1.8rem';
+const borderRadius = '.5rem';
 
 /* MAIN */
 export const MainWrapper = styled.section`
@@ -37,18 +39,17 @@ export const PercentageText = styled(BoldText)`
 `;
 
 /* ICONS */
-export const BlueIcon = styled.span`
-    color: ${blue};
-    font-size: 1.8rem;
+const Icon = styled.span`
+    font-size: ${iconSize};
     display: flex;
     justify-content: flex-start;
 `;
+export const BlueIcon = styled(Icon)`
+    color: ${blue};
+`;
 
-export const GreyIcon = styled.span`
+export const GreyIcon = styled(Icon)`
     color: ${grey};
-    font-size: 1.8rem;
-    display: flex;
-    justify-content: flex-end;
 `;
 
 export const Square = styled.div`
@@ -57,7 +58,7 @@ export const Square = styled.div`
     position: relative;
     resize: vertical;
     padding: 1.5rem;
-    border-radius: .5rem;
+    border-radius: ${borderRadius};
     background-color: ${yellow};
 `;
 
@@ -76,10 +77,23 @@ export const TileWrapper = styled.div`
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 `;
 
-export const Tile = styled.div`
+const Tile = styled.div`
     background-color: white;
     border-bottom: lightblue solid 2px;
     border-left: lightblue solid 2px;
     padding: 2%;
     display: 'flex';
+`;
+
+export const TileTop = styled(Tile)`
+    border-top-left-radius: ${borderRadius};
+    border-top-right-radius: ${borderRadius};
+`;
+
+export const TileBottomLeft = styled(Tile)`
+    border-bottom-left-radius: ${borderRadius};
+`;
+
+export const TileBottomRight = styled(Tile)`
+    border-bottom-right-radius: ${borderRadius};
 `;
