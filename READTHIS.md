@@ -1,5 +1,5 @@
 # What I've done...
-![My attempt](./my-design.png?raw=true)
+![My attempt](./my-design.PNG?raw=true)
 
 I have implemented the requirements as follows:
 
