@@ -6,17 +6,38 @@ import LinesDetails from './lines-details';
 import { Grid, Row, Col } from '../styles/grid';
 import { TileWrapper, TileTop, TileBottomLeft, TileBottomRight } from '../styles/content';
 
-// const calculatePercentage = (totalValue, partialValue) => (
-//   ((totalValue / partialValue) * 100).toFixed(0, 10)
-// );
-const calculatePercentage = (totalValue, partialValue) => {
-  if (!totalValue || !partialValue)
+const validateValues = (totalValue, partialValue) => {
+  // Because 0 is an acceptable value
+  const falsey = (value) => (
+    value === false ||
+    value === null ||
+    value === undefined ||
+    value === '');
+
+  if (falsey(totalValue) || falsey(partialValue))
     return 'Please supply valid numbers for calculation.'
 
   if (partialValue > totalValue)
     return `Partial value (${partialValue}) cannot be greater than total value (${totalValue}).`
 
-  return ((totalValue / partialValue) * 100).toFixed(0, 10)
+  return;
+};
+
+const calculatePercentage = (totalValue, partialValue) => {
+  const validationMessage = validateValues(totalValue, partialValue);
+
+  if (validationMessage)
+    return validationMessage;
+  else if (totalValue === 0 || partialValue === 0) {
+    return 0;
+  } else {
+    const division = (((partialValue % totalValue) / totalValue) * 100);
+    if (division % 100 === 0)
+      return ((totalValue / partialValue) * 100).toFixed(0, 10)
+    else
+      return division.toFixed(0, 10);
+  }
+
 };
 
 const SalesOverview = ({ salesOverview }) => {
