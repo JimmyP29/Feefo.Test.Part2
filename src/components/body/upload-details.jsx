@@ -1,27 +1,43 @@
 import React from 'react';
-import { number } from 'prop-types';
+import { string } from 'prop-types';
 import { Grid, Row } from '../styles/grid';
-import { PercentageText, GreyText } from '../styles/content';
+import { PercentageText, GreyText, RedText } from '../styles/content';
+import { PaddingTop } from '../styles/layout';
 
-const UploadDetails = ({ uploadPercentage }) => (
+const UploadDetails = ({ uploadPercentage: renderValue }) => (
   <Grid>
-    <Row>
-      <PercentageText>
-        {`${uploadPercentage}%`}
-      </PercentageText>
-    </Row>
-    <Row>
-      <GreyText>UPLOAD SUCCESS</GreyText>
-    </Row>
+    {
+      isNaN(parseInt(renderValue)) ?
+        (
+          <Row>
+            <PaddingTop percentage={8.7}>
+              <RedText>{renderValue}</RedText>
+            </PaddingTop>
+          </Row>
+        )
+        :
+        (
+          <>
+            <Row>
+              <PercentageText>
+                {`${renderValue}%`}
+              </PercentageText>
+            </Row>
+            <Row>
+              <GreyText>UPLOAD SUCCESS</GreyText>
+            </Row>
+          </>
+        )
+    }
   </Grid>
 );
 
 UploadDetails.propTypes = {
-  uploadPercentage: number,
+  uploadPercentage: string,
 };
 
 UploadDetails.defaultProps = {
-  uploadPercentage: 0,
+  uploadPercentage: '',
 };
 
 export default UploadDetails;

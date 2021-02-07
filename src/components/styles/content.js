@@ -29,6 +29,10 @@ export const GreyText = styled(Text)`
     color: ${grey};
 `;
 
+export const RedText = styled(Text)`
+    color: red;
+`;
+
 export const BoldText = styled(Text)`
     font-weight: bold;
 `;

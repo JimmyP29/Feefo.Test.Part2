@@ -1,27 +1,43 @@
 import React from 'react';
-import { number } from 'prop-types';
+import { string } from 'prop-types';
 import { Grid, Row } from '../styles/grid';
-import { PercentageText, GreyText } from '../styles/content';
+import { PercentageText, GreyText, RedText } from '../styles/content';
+import { PaddingTop } from '../styles/layout';
 
-const LinesDetails = ({ linePercentage }) => (
+const LinesDetails = ({ linePercentage: renderValue }) => (
   <Grid>
-    <Row>
-      <PercentageText>
-        {`${linePercentage}%`}
-      </PercentageText>
-    </Row>
-    <Row>
-      <GreyText>LINES SAVED</GreyText>
-    </Row>
+    {
+      isNaN(parseInt(renderValue)) ?
+        (
+          <Row>
+            <PaddingTop percentage={8.7}>
+              <RedText>{renderValue}</RedText>
+            </PaddingTop>
+          </Row>
+        )
+        :
+        (
+          <>
+            <Row>
+              <PercentageText>
+                {`${renderValue}%`}
+              </PercentageText>
+            </Row>
+            <Row>
+              <GreyText>LINES SAVED</GreyText>
+            </Row>
+          </>
+        )
+    }
   </Grid>
 );
 
 LinesDetails.propTypes = {
-  linePercentage: number,
+  linePercentage: string,
 };
 
 LinesDetails.defaultProps = {
-  linePercentage: 0,
+  linePercentage: '',
 };
 
 export default LinesDetails;

@@ -6,9 +6,18 @@ import LinesDetails from './lines-details';
 import { Grid, Row, Col } from '../styles/grid';
 import { TileWrapper, TileTop, TileBottomLeft, TileBottomRight } from '../styles/content';
 
-const calculatePercentage = (totalValue, partialValue) => (
-  parseInt(((totalValue / partialValue) % 100).toFixed(1, 10))
-);
+// const calculatePercentage = (totalValue, partialValue) => (
+//   ((totalValue / partialValue) * 100).toFixed(0, 10)
+// );
+const calculatePercentage = (totalValue, partialValue) => {
+  if (!totalValue || !partialValue)
+    return 'Please supply valid numbers for calculation.'
+
+  if (partialValue > totalValue)
+    return `Partial value (${partialValue}) cannot be greater than total value (${totalValue}).`
+
+  return ((totalValue / partialValue) * 100).toFixed(0, 10)
+};
 
 const SalesOverview = ({ salesOverview }) => {
   const {
