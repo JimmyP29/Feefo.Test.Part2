@@ -3,6 +3,7 @@ import AccountOverview from './account-overview';
 
 test('renders Account Overview', () => {
   render(<AccountOverview />);
-  const element = screen.getByText('Account Overview');
-  expect(element).toBeInTheDocument();
+
+  const accountOverview = screen.getByText('Account Overview');
+  expect(accountOverview).toBeInTheDocument();
 });
