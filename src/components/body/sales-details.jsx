@@ -8,46 +8,51 @@ import { Grid, Row, Col } from '../styles/grid';
 import { Text, BoldText, BlueIcon, GreyIcon } from '../styles/content';
 import { PaddingTop, PaddingLeft } from '../styles/layout';
 
-const SalesDetails = ({ numberOfUploads, numberOfLines }) => (
-  <Grid>
-    <Row>
-      <Col>
-        <span aria-hidden="true">
-          <BlueIcon>
-            <FontAwesomeIcon icon={faUpload} />
-          </BlueIcon>
-        </span>
-      </Col>
-      <Col size={1}>
-        <PaddingLeft percentage={1}>
-          <BoldText>Sales</BoldText>
-        </PaddingLeft>
-      </Col>
-      <Col>
-        <span aria-hidden="true">
-          <Tippy content={'Hello, here is some information...'}>
-            <GreyIcon>
-              <FontAwesomeIcon icon={faInfoCircle} />
-            </GreyIcon>
-          </Tippy>
-        </span>
-      </Col>
-    </Row>
-    <PaddingTop percentage={1}>
+const SalesDetails = ({ numberOfUploads, numberOfLines }) => {
+  const tippyText = `You had ${numberOfUploads} uploads and ` +
+    `${numberOfLines} lines added.`
+
+  return (
+    <Grid>
       <Row>
+        <Col>
+          <span aria-hidden="true">
+            <BlueIcon>
+              <FontAwesomeIcon icon={faUpload} />
+            </BlueIcon>
+          </span>
+        </Col>
         <Col size={1}>
-          <Text>
-            You had
-          <BoldText> {numberOfUploads} uploads </BoldText>
-          and
-          <BoldText> {numberOfLines} lines </BoldText>
-          added.
-          </Text>
+          <PaddingLeft percentage={1}>
+            <BoldText>Sales</BoldText>
+          </PaddingLeft>
+        </Col>
+        <Col>
+          <span aria-hidden="true">
+            <Tippy content={tippyText}>
+              <GreyIcon>
+                <FontAwesomeIcon icon={faInfoCircle} />
+              </GreyIcon>
+            </Tippy>
+          </span>
         </Col>
       </Row>
-    </PaddingTop>
-  </Grid>
-);
+      <PaddingTop percentage={1}>
+        <Row>
+          <Col size={1}>
+            <Text>
+              You had
+              <BoldText> {numberOfUploads} uploads </BoldText>
+                  and
+              <BoldText> {numberOfLines} lines </BoldText>
+                  added.
+            </Text>
+          </Col>
+        </Row>
+      </PaddingTop>
+    </Grid>
+  );
+}
 
 SalesDetails.propTypes = {
   numberOfUploads: number.isRequired,

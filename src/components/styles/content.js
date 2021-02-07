@@ -4,7 +4,7 @@ const blue = '#0796FF';
 const grey = '#5A6369';
 const dark = '#282c34';
 const green = '#08AA37';
-const yellow = '#EEC80C'
+const yellow = '#EEC80C';
 
 /* MAIN */
 export const MainWrapper = styled.section`
