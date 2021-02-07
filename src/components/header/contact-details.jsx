@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { Grid, Row, Col } from '../styles/grid';
 import { GreyText, BoldText, Text } from '../styles/content';
-import { PaddingLeft, PaddingBottom } from '../styles/layout';
+import { PaddingLeft, PaddingBottom, PaddingTop } from '../styles/layout';
 import SupportSquare from './support-square';
 
 const ContactDetails = ({ name, email }) => {
@@ -23,21 +23,21 @@ const ContactDetails = ({ name, email }) => {
             <SupportSquare />
           </Col>
           <Col size={5}>
-            <Row>
-              <PaddingLeft>
+            <PaddingTop percentage={1}>
+              <Row>
                 <BoldText>{name}</BoldText>
-              </PaddingLeft>
-            </Row>
+              </Row>
+            </PaddingTop>
             <Row>
-              <PaddingLeft>
-                <span aria-hidden="true">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </span>
+              <span aria-hidden="true">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
+              <PaddingLeft percentage='1'>
                 <Text>{email}</Text>
               </PaddingLeft>
             </Row>
           </Col>
-          <Col size={5}>
+          <Col size={1}>
             <Text>020 3362 4208</Text>
           </Col>
         </Row>

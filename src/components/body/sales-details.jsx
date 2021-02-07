@@ -6,17 +6,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { Grid, Row, Col } from '../styles/grid';
 import { Text, BoldText, BlueIcon, GreyIcon } from '../styles/content';
+import { PaddingTop, PaddingLeft } from '../styles/layout';
 
 const SalesDetails = ({ numberOfUploads, numberOfLines }) => (
   <Grid>
     <Row>
-      <Col size={1}>
+      <Col>
         <span aria-hidden="true">
           <BlueIcon>
             <FontAwesomeIcon icon={faUpload} />
           </BlueIcon>
         </span>
-        <BoldText>Sales</BoldText>
+      </Col>
+      <Col size={1}>
+        <PaddingLeft percentage={1}>
+          <BoldText>Sales</BoldText>
+        </PaddingLeft>
       </Col>
       <Col>
         <span aria-hidden="true">
@@ -28,17 +33,19 @@ const SalesDetails = ({ numberOfUploads, numberOfLines }) => (
         </span>
       </Col>
     </Row>
-    <Row>
-      <Col size={1}>
-        <Text>
-          You had
+    <PaddingTop percentage={1}>
+      <Row>
+        <Col size={1}>
+          <Text>
+            You had
           <BoldText> {numberOfUploads} uploads </BoldText>
           and
           <BoldText> {numberOfLines} lines </BoldText>
           added.
           </Text>
-      </Col>
-    </Row>
+        </Col>
+      </Row>
+    </PaddingTop>
   </Grid>
 );
 
