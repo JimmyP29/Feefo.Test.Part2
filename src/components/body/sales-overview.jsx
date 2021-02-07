@@ -7,12 +7,8 @@ import { Grid, Row, Col } from '../styles/grid';
 import { TileWrapper, TileTop, TileBottomLeft, TileBottomRight } from '../styles/content';
 
 const validateValues = (totalValue, partialValue) => {
-  // Because 0 is an acceptable value
-  const falsey = (value) => (
-    value === false ||
-    value === null ||
-    value === undefined ||
-    value === '');
+  // Because 0 is an acceptable value the check for falsey needs to be more explicit.
+  const falsey = (value) => (value !== 0 && !value);
 
   if (falsey(totalValue) || falsey(partialValue))
     return 'Please supply valid numbers for calculation.'
@@ -37,7 +33,6 @@ const calculatePercentage = (totalValue, partialValue) => {
     else
       return division.toFixed(0, 10);
   }
-
 };
 
 const SalesOverview = ({ salesOverview }) => {
