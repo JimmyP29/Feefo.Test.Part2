@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import SalesOverview from './sales-overview';
 import { salesOverviewRenderData } from '../testData';
 import { calculatePercentage } from '../body/sales-overview';
