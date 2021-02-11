@@ -16,6 +16,7 @@ I have implemented the requirements as follows:
 - Amended the link in the README to point the reference image instead of a boken link :smile:.
 - I wasn't sure what the purpose of the Info icon was, so feel free to hover over it for a **small surprise**. 
 
-
+## What I have not done...
+- Anything that uses the `lastUploadDate` property within the static data. This is after confirming that it is not needed in this test via email.
 
 
