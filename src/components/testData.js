@@ -8,7 +8,6 @@ export const initialSetup = {
         successfulUploads: 3,
         linesAttempted: 20,
         linesSaved: 4,
-        lastUploadDate: 1605001226079,
     }
 };
 
@@ -33,7 +32,6 @@ export const salesOverviewRenderData = {
             successfulUploads: 3,
             linesAttempted: 20,
             linesSaved: 4,
-            lastUploadDate: 1605001226079,
         },
         output: {
             uploadRenderValue: '38',
@@ -46,7 +44,6 @@ export const salesOverviewRenderData = {
             successfulUploads: 8,
             linesAttempted: 20,
             linesSaved: 0,
-            lastUploadDate: 1605001226079,
         },
         output: {
             uploadRenderValue: '100',
@@ -59,7 +56,6 @@ export const salesOverviewRenderData = {
             successfulUploads: 8,
             linesAttempted: '',
             linesSaved: 0,
-            lastUploadDate: 1605001226079,
         },
         output: {
             uploadRenderValue: 'Partial value (8) cannot be greater than total value (0).',
@@ -72,7 +68,6 @@ export const salesOverviewRenderData = {
             successfulUploads: 8,
             linesAttempted: false,
             linesSaved: 0,
-            lastUploadDate: 1605001226079,
         },
         output: {
             uploadRenderValue: 'Please supply numerical values only.',
@@ -85,7 +80,6 @@ export const salesOverviewRenderData = {
             successfulUploads: 8,
             linesAttempted: undefined,
             linesSaved: 0,
-            lastUploadDate: 1605001226079,
         },
         output: {
             uploadRenderValue: 'Please supply valid numbers for calculation.',

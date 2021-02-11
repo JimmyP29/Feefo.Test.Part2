@@ -50,7 +50,6 @@ AccountOverview.propTypes = {
     successfulUploads: number,
     linesAttempted: number,
     linesSaved: number,
-    lastUploadDate: number,
   }),
 };
 
@@ -65,7 +64,6 @@ AccountOverview.defaultProps = {
       successfulUploads: 0,
       linesAttempted: 0,
       linesSaved: 0,
-      lastUploadDate: 0,
     },
   }
 };
