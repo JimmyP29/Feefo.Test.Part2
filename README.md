@@ -1,41 +1,22 @@
-# Feefo: UI Technical Assessment
+# What I've done...
+![My attempt](./my-design.PNG?raw=true)
 
-Implement the design provided in `design.png` as a set of React components.
+I have implemented the requirements as follows:
 
-![account overview design](./design.png?raw=true)
+- I have recreated the design using a series of functional components, all of which include **prop-types**.
+- I have closely recreated the design visually as best as I could. I removed all the enclosed **css** and used **Styled Components** instead, please find these within the `styles` folder.
+- Using **Flexbox** I have created Grid components _(which you can find in `styles/grid.js`)_ for use in the UI to make it responsive _(not so much on mobile)_ within the Viewport.
+- Icons implemented from **fortawesome** and wrapped in `<span aria-hidden="true"></span>` to aid with **A11y**. I am pleased to have been asked to do this as sadly, I have never worked anywhere where this has been a consideration at all.
+- The design is driven by the static data provided, the percentage data is calculated on the fly when rendered - so feel free to change it.
+- The percentage calculations also have some validation applied to deal with non-legal values and the UI responds with user friendly error messages as a result.
+- **Jest tests**, I have created a number of test suites that cater for the rendering of components as well as the aformentioned validation. You can checkout `testData.js` to find the cases used for both happy and sad paths, these are in turn being fed into tests using `describe.each()`. Coming from using **Enzyme** I am new to the world of The React Testing Library and as such there is definitely room for improvement! :grin:
 
-There is a stub for the data structure in `app.js`. Please use this to drive the view content and derive any calculated data from this in your components. The container component has also been created `AccountOverview` `./src/account-overview.jsx`.
 
-## We would like to see
-- The layout should grow/shrink sensibly with the viewport
-- The design split into several components
-- Usage of `proptypes`
-- Unit tests covering your components
-- a11y considered and relevant ARIA attributes added
+## What I have also done...
+- Amended the link in the README to point the reference image instead of a boken link :smile:.
+- I wasn't sure what the purpose of the Info icon was, so feel free to hover over it for a **small surprise**. 
 
-## Technical Notes
-- Assets for the font in the design (roboto) have been included via google fonts
-- Font Awesome icons are available via the Font Awesome React bindings (there is a usage example in `account-overview.jsx`)
-- The repository is set up to work with `styled-components` if you feel comfortable doing so, please use this instead of css
-- The repository is set up to use jest + testing library for unit tests
+## What I have not done...
+- Anything that uses the `lastUploadDate` property within the static data. This is after confirming that it is not needed in this test via email.
 
-## Setup
-1. Run `npm install` to install required dependencies
-2. Run `npm run start` to start a local development server
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
