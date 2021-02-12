@@ -13,7 +13,7 @@ I have implemented the requirements as follows:
 
 
 ## What I have also done...
-- Amended the link in the README to point the reference image instead of a boken link :smile:.
+- Amended the link in the README (Renamed to Requirements.md) to point the reference image instead of a broken link :smile:.
 - I wasn't sure what the purpose of the Info icon was, so feel free to hover over it for a **small surprise**. 
 
 ## What I have not done...
